@@ -7,6 +7,10 @@ $numArray = [
     [14, 54, 74, 2, 85, 35, 66]
 ];
 
+    if (isset($_POST['送信'])) {
+
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
