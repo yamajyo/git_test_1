@@ -22,6 +22,7 @@ $numArray = [
             $result = $total * $_POST['num'];
         }
     }
+    echo 111111111111111111;
 
 ?>
 <!DOCTYPE html>
