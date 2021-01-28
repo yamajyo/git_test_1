@@ -7,8 +7,20 @@ $numArray = [
     [14, 54, 74, 2, 85, 35, 66]
 ];
 
-    if (isset($_POST['送信'])) {
+    if (isset($_POST['t'])) {
 
+        if (empty($_POST['num']) || !is_numeric($_POST['num'])) {
+            $result = '数字を入力してください';
+        } elseif ($_POST['num'] < 1 || $_POST['num'] > 99) {
+            $result = '1から99までの数字を入力してください';
+        } else {
+            $total = 0;
+            foreach ($numArray[$_POST['arr']] as $value) {
+                $total += $value;
+            }
+
+            $result = $total * $_POST['num'];
+        }
     }
 
 ?>
@@ -24,7 +36,7 @@ $numArray = [
         <form action="" method="post">
             <p>
                 配列の選択:
-                <select name="" id="">
+                <select name="arr" id="">
                     <option value="0">配列1</option>
                     <option value="1">配列2</option>
                     <option value="2">配列3</option>
@@ -34,9 +46,12 @@ $numArray = [
             </p>
             <p>
                 掛ける数値:
-                <input type="text" value="num" maxlength="2">
+                <input type="text" name="num" maxlength="2">
             </p>
-            <p><input type="submit" value="送信"></p>
+            <p><input type="submit" name="t" value="送信"></p>
         </form>
+        <?php if(isset($result)) :?>
+            <p><?=$result?></p>
+        <?php endif ;?>
 </body>
 </html>
