@@ -7,7 +7,6 @@ $numArray = [
     [14, 54, 74, 2, 85, 35, 66]
 ];
 
-echo 11111111111111111111111;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
